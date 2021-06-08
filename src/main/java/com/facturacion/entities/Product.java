@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.PrePersist;
 import javax.persistence.Table;
 
 @Entity
@@ -57,6 +58,11 @@ public class Product implements Serializable{
 	}
 	public void setCreateAt(Date createAt) {
 		this.createAt = createAt;
+	}
+	
+	@PrePersist
+	public void prePersist() {
+		createAt = new Date();
 	}
 	
 	public String toString() {

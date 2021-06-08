@@ -37,6 +37,7 @@ public class Invoice implements Serializable{
 	
 	// Relacion entre invoice y customer m->n
 	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "customer_id")
 	private Customer customer;
 	
 	// Relacion en un solo sentido, por eso debemos indicar la columna que se creara automaticamente
@@ -99,6 +100,15 @@ public class Invoice implements Serializable{
 	@PrePersist
 	public void prePersist() {
 		createAt  = new Date();
+	}
+	
+	public Double getTotal() {
+		Double total = 0.0;
+		int size = items.size();
+		for(int t = 0; t < size; t++) {
+			total = total + items.get(t).calculateImport();
+		}
+		return total;
 	}
 	
 	@Override

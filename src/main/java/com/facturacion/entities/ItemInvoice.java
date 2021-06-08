@@ -4,9 +4,12 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -19,6 +22,10 @@ public class ItemInvoice implements Serializable{
 	
 	@Column(name = "amount")
 	private Integer amount;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "product_id")
+	private Product producto;
 	
 	public ItemInvoice() {
 		// Constructor vacio
@@ -38,8 +45,8 @@ public class ItemInvoice implements Serializable{
 		this.amount = amount;
 	}
 	
-	public void calculateImport() {
-		this.amount.longValue();
+	public Double calculateImport() {
+		 return amount.doubleValue() * producto.getPriceProduct();
 	}
 	
 	@Override
