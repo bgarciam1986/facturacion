@@ -38,8 +38,12 @@ public class Customer {
 	@Column(name = "email")
 	private String email;
 	
-	@Column(name = "creat_at")
+	@Column(name = "create_at")
 	private Date createAt;
+	
+	@Column(name="photo")
+	private String photo;
+	
 	
 	// realacion entre clientes y facturas n->m
 	@OneToMany(mappedBy = "customer",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
@@ -107,6 +111,13 @@ public class Customer {
 		this.invoices = invoices;
 	}
 	
+	public String getPhoto() {
+		return photo;
+	}
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
+	
 	// Crea nueva fecha en variable
 	@PrePersist
 	public void prePersist() {
@@ -120,7 +131,7 @@ public class Customer {
 
 	@Override
 	public String toString() {
-		return "Customer[id="+id+", firstName="+firstName+", lastName="+lastName+",paternalSurname="+paternalSurname+",maternalSurname="+maternalSurname+",email="+email+",createAt="+createAt+", invoices="+invoices+"]";
+		return "Customer[id="+id+", firstName="+firstName+", lastName="+lastName+",paternalSurname="+paternalSurname+",maternalSurname="+maternalSurname+",email="+email+",createAt="+createAt+",photo="+photo+", invoices="+invoices+"]";
 	}
 
 }

@@ -1,0 +1,5 @@
+INSERT INTO customers(id,first_name,last_name,paternal_surname,maternal_surname,email,create_at,photo) VALUES(1,'Benjamin','', 'Garcia','Maldonado', 'bgarciam@live.com.mx', '1986-03-13', ' ');
+INSERT INTO customers(id,first_name,last_name,paternal_surname,maternal_surname,email,create_at,photo) VALUES(2,'Benjamin','', 'Garcia','Maldonado', 'bgarciam@live.com.mx', '1986-03-13', ' ');
+INSERT INTO customers(id,first_name,last_name,paternal_surname,maternal_surname,email,create_at,photo) VALUES(3,'Benjamin','', 'Garcia','Maldonado', 'bgarciam@live.com.mx', '1986-03-13', ' ');
+INSERT INTO customers(id,first_name,last_name,paternal_surname,maternal_surname,email,create_at,photo) VALUES(4,'Benjamin','', 'Garcia','Maldonado', 'bgarciam@live.com.mx', '1986-03-13', ' ');
+INSERT INTO customers(id,first_name,last_name,paternal_surname,maternal_surname,email,create_at,photo) VALUES(5,'Benjamin','', 'Garcia','Maldonado', 'bgarciam@live.com.mx', '1986-03-13', ' ');
